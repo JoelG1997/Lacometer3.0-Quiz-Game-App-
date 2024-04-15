@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/Quiz_Game.css') }}">
+    <title>Quiz App</title>
+</head>
+<body>
+    <div class="logout">
+        <form action="/logout" method="post">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+    <div id="container">
+        <div class="Rules">
+            <div class="header">Quiz Rules</div>
+            <ol></ol>
+            <div id="start-quiz-wrapper">
+                <button id="start-quiz">Start Quiz</button>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="header" id="quiz_app">Quiz App</div>
+            <div class="content-wrapper">
+                <div id="question" class="question"></div>
+                <ol id="options"></ol>
+            </div>
+        </div>
+        <div class="footer">
+            <button id="nextBtn">Next</button>
+            <button id="viewresultforfooter" style="display:none">Quiz Score</button>
+        </div>
+    </div>
+    <!-- Container-2 -->
+    <div class="container_2" style="display: none;">
+        <div class="dicebutton" id="dicebutton">
+            <div class="dice" id="dice"></div>
+            <p class="warn" id="warn"></p>
+            <h3 class="Scoredisplay_1" id="Scoredisplay_1"></h3>
+            <h3 class="Scoredisplay_2" id="Scoredisplay_2"></h3>
+        </div>
+        <div class="snakeandladder" id="snakeandladder">
+            <div id="board"></div>
+            <div id="timer"></div>
+            <img id="bluetimer" src="{{ url_for('static', filename='images/bluetimer.png') }}" style="display: none;"></img>
+            <img id="yellowtimer" src="{{ url_for('static', filename='images/yellowtimer.png') }}" style="display: none;" ></img>
+            <img id="redtimer" src="{{ url_for('static', filename='images/redtimer.png') }}" style="display: none;"></img>
+        </div>
+    </div>
+    
+    <!-- Container 3 for Sign Board-->
+    <div id="container_3"></div>
+    
+    <!-- container_4 for leaderboard table -->
+    <div class="container_4" style="display: none;"></div>
+    
+    <!-- Button for viewing result on leaderboard -->
+    <button id="viewresultonleaderboard" type="button" style="display: none;">Result View</button>
+
+    <!-- container_5 for Trophy box 1  -->
+    <div class="container_5" style="display: none;"></div>
+    
+    <!-- container_6 for Trophy box 2 -->
+    <div class="container_6" style="display: none;"></div>
+    
+     <!-- container_7 for Individual Score Box -->
+     <div class="container_7" style="display: none;"></div>
+     
+     <!-- Button for leaderboard on view result-->
+     <button id="leaderboardonviewresult" type="button" style="display: none;">Leaderboard</button>
+     
+    
+    
+    <div class="win-lose-overlay">
+        <div class="win-lose-message"></div>
+        <div class="warnsecond" style="display: none;"></div>
+        <button id="lose-start-quiz" type="button" class="win-lose-button">Start Again</button>
+        <button id="viewresult" type="button" >Result View</button>
+        <button id="leaderboardbutton" type="button" >Leaderboard</button>
+    </div>
+    
+    <script src="{{ url_for('static', filename='Scripts/Quiz_Game.js') }}"></script> 
+</body>
+</html>
+
+ 

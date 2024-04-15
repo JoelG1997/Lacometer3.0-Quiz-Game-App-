@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+#container {
+    border-radius: 30px;
+    width: 400px;
+    border: 1px solid #ffffff20;
+    overflow: hidden;
+    background-color: #1e293b;
+    color: #d7dade;
+}
+#container2 {
+    border-radius: 30px;
+    width: 400px;
+    border: 1px solid #ffffff20;
+    overflow: hidden;
+    background-color: #1e293b;
+    color: #d7dade;
+}
+
+.content {
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #ccdae7;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+textarea,
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ffffff20;
+    background-color: #0f172a;
+    color: #ccdae7;
+}
+
+ol {
+    padding: 10px 15px 10px 40px;
+}
+
+li {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+button {
+    background-color: #f9d126;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin: 10px 0 20px 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    color: #1e293b;
+    padding: 15px 20px;
+}
+
+button:hover {
+    background-color: #e9be0e;
+}
+
+
+#addquestion
+{
+    position: absolute;
+    left: 37%;
+}
+
+.logout 
+    {
+        position: absolute;
+        top: 10px; /* Adjust as needed */
+        right: 10px; /* Adjust as needed */
+        z-index: 9999; /* Ensures it appears above other elements */
+    }
+  #back
+  {
+    position: absolute;
+        top: 10px; /* Adjust as needed */
+        left: 10px; 
+        z-index: 9999; /* Ensures it appears above other elements */
+  }
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+.vector
+{
+    position: absolute;
+    left:71%;
+    top: 40%;
+    display: grid;
+}
+
+
+
+
+/* Students Score Table-------------*/
+.container_3 {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    border-radius: 25px; /* Increased border-radius for a softer look */
+    width: 53%;
+    max-height: 630px;
+    border: 2px solid transparent;
+    overflow: hidden;
+    background-color: #2c3e50; /* Darkened background color */
+    color: #ecf0f1; /* Lightened text color */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4); /* Adjusted box shadow */
+}
+
+#studentscore {
+    margin-top: 20px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+#studentscorebutton {
+    position: absolute;
+}
+
+#studentscore h2 {
+    color: #f39c12; /* Changed heading color */
+    text-align: center;
+    margin-top: -33px;
+    padding-top: 10px;
+}
+
+#studentscore-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 4%;
+}
+
+#studentscore-table th,
+#studentscore-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+#studentscore-table th {
+    background-color: #2c3e50; /* Darkened header background color */
+    color: #f39c12; /* Changed header text color */
+    font-weight: bold;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 10px rgba(79, 175, 91, 0.8); } /* Changed glow color */
+    50% { box-shadow: 0 0 20px rgba(79, 175, 91, 0.8); } /* Increased glow size */
+    100% { box-shadow: 0 0 10px rgba(79, 175, 91, 0.8); } /* Return to original glow */
+}
+
+.highlighted 
+{
+    animation: glow 1.5s infinite;
+    font-weight: bold;
+    color: #bdc3c7; /* Changed highlighted text color */
+    background-color: transparent;
+}
+
+

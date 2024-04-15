@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0f172a;
+    color: #fff;
+    flex-direction: column; /* Change flex direction to column */
+}
+.team-buttons 
+{
+    display: grid;
+    gap: 25px;
+    margin-top: 30px; /* Adjust the margin as needed */
+}
+
+.team-button 
+{
+    width: 130px;
+    height: 130px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.team-button.t1::before {
+    content: '';
+    position: absolute;
+    background: conic-gradient(
+        brown,
+        darkred,
+        brown
+    );
+    width: 500%;
+    height: 500%;
+    animation: spin 1s infinite linear;
+}
+
+.team-button.t2::before {
+    content: '';
+    position: absolute;
+    background: conic-gradient(
+        darkgreen,
+        green,
+        darkgreen
+
+);
+    width: 500%;
+    height: 500%;
+    animation: spin 1s infinite linear;
+}
+.team-button.t3::before {
+    content: '';
+    position: absolute;
+    background: conic-gradient(
+        #488cfb,
+        #29dbbc,
+        #ddf505,
+        #ff9f0e,
+        #e440bb,
+        #655adc,
+        #488cfb
+    );
+    
+    animation: spin 1s infinite linear;
+    width: 500%;
+    height: 500%;
+}
+
+.team-button.t4::before {
+    content: '';
+    position: absolute;
+    background: conic-gradient(
+        #488cfb,
+        #29dbbc,
+        #ddf505,
+        #ff9f0e,
+        #e440bb,
+        #655adc,
+        #488cfb
+);
+
+    width: 500%;
+    height: 500%;
+    animation: spin 1s infinite linear;
+}
+.team-button.t5::before {
+    content: '';
+    position: absolute;
+    background: conic-gradient(
+        #488cfb,
+        #29dbbc,
+        #ddf505,
+        #ff9f0e,
+        #e440bb,
+        #655adc,
+        #488cfb
+    );
+    width: 500%;
+    height: 500%;
+    animation: spin 1s infinite linear;
+}
+
+.team-button.t6::before {
+    content: '';
+    position: absolute;
+    background: conic-gradient(
+        #488cfb,
+        #29dbbc,
+        #ddf505,
+        #ff9f0e,
+        #e440bb,
+        #655adc,
+        #488cfb
+    );
+    width: 500%;
+    height: 500%;
+    animation: spin 1s infinite linear;
+}
+.team-button.t1::after,
+.team-button.t2::after,
+.team-button.t3::after,
+.team-button.t4::after,
+.team-button.t5::after,
+.team-button.t6::after 
+{
+    position: absolute;
+    background: #212121;
+    height: 84%;
+    width: 90%;
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+
+.team-button.t1::after {
+    content: 'Team 1';
+    
+}
+
+.team-button.t2::after {
+    content: 'Team 2';
+}
+
+.team-button.t3::after {
+    content: 'Team 3';
+}
+
+.team-button.t4::after {
+    content: 'Team 4';
+}
+
+.team-button.t5::after {
+    content: 'Team 5';
+}
+
+.team-button.t6::after 
+{
+    content: 'Team 6';
+    
+}
+.team-button:hover {
+    transform: scale(1.1);
+}
+
+.team-button:hover::before {
+    animation: spin 0.2s infinite linear;
+}
+
+.container
+{
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  position: absolute; 
+  top: 90%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+
+}
+
+.start {
+    width: 160px;
+    height: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:larger;
+    background-color: green; /* Background color */
+    color: #fff; /* Text color */
+    border: 1px lightgreen; /* Border color */
+    border-radius: 5px; /* Border radius for rounded corners */
+    padding: 1px; /* Padding inside the button */
+    margin: 10px; /* Margin around the button */
+    cursor: pointer; /* Cursor style on hover */
+    transition: background-color 0.3s ease; /* Smooth transition on background color change */
+  }
+  .start:hover
+  {
+    background-color: greenyellow; /* Background color on hover */
+    color: #212121;
+  }
+  
+.Selecttheteam
+{
+    position: static;
+    bottom: 470px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+button
+{
+    background-color: #f9d126;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin: 10px 0 20px 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    color: #1e293b;
+    padding: 15px 20px
+}
+button:hover
+{
+    background-color: #e9be0e;
+}
+
+.logout 
+    {
+        position: absolute;
+        top: 10px; /* Adjust as needed */
+        right: 10px; /* Adjust as needed */
+        z-index: 9999; /* Ensures it appears above other elements */
+    }
+  #back
+  {
+    position: absolute;
+        top: 10px; /* Adjust as needed */
+        left: 10px; 
+        z-index: 9999; /* Ensures it appears above other elements */
+  }
+  #dash
+  {
+    position: absolute;
+        top: 10px; /* Adjust as needed */
+        left: 10px; 
+        z-index: 9999; /* Ensures it appears above other elements */
+  }
+
+
+
+
+
+  /* Student Dashboard */
+
+  .container_2 
+  {
+    position: absolute;
+    width: 20%;
+    top: 44%;
+    left: 40%;
+    
+}
+
+.info-box {
+    background-color: transparent;
+    color: #d7dade;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 2px solid transparent; /* Initial border style */
+}
+
+
+
+.info-box h2 
+{
+    color: #f9d126;
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-transform:capitalize;
+}
+
+.stats 
+{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 80px;
+    
+}
+
+.stat-box-green 
+{
+    position: absolute;
+    left: 10%;
+    top: 27%;
+    background-color: crimson;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent; /* Initial border style */
+}
+
+    
+.stat-box-green  p 
+{
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: bolder;
+}
+
+.stats span 
+{    
+    position: absolute;
+    top: 35%;
+    left: 75%;
+    color: yellow;
+    font-weight: bold;
+    font-size: 35px;
+}

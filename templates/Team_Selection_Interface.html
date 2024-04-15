@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/Team_Selection_Interface.css') }}">
+</head>
+<body>
+
+    <header class="fixed-header">
+        <h1>Welcome To Quiz-Game App: <span id="username" style="color: rgb(235, 170, 87);">
+            {{username}}</span></h1>
+    </header>
+        <div class="logout">
+            <form action="/logout" method="post">
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+        <div id="back" style="display: none;">
+            <button type="button" id="backbutton">Back</button>
+        </div>
+        <div id="dash">
+            <button type="button" id="dashboardbutton">Score</button>
+        </div>
+    
+        <div class="Selecttheteam">
+            <h1>Select The Team</h1>
+        </div>
+        <div class="team-buttons">
+            <button class="team-button t1"  onclick="storePlayerName('Team 1')">Team 1</button>
+            <button class="team-button t2"  onclick="storePlayerName('Team 2')">Team 2</button>         
+        </div>    
+        <div class="container">
+                <button class="start" onclick='location.href="quiz"'>Start</button>
+        </div> 
+        <!-- Student Dashboard -->
+        <div class="container_2" style="display: none;"></div> 
+   
+    <script>
+        var loggedInUserName = "{{ username }}";  // Why this is done because, if we put this in interface.js file, it's putinng "{{username}}" into the sql table instaed of the players name.
+    </script>
+    <script src="{{ url_for('static', filename='Scripts/Team_Selection_Interface.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Question Entry</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/Teacher_Dashboard.css') }}">
+</head>
+<body>
+    <header class="fixed-header">
+        <h1>Teacher-Dashboard: <span id="username"></span>
+            {{username}}</h1>
+    </header>
+        <div class="logout">
+            <form action="/logout" method="post">
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+    
+    <div id="container" style="display: none;">
+        <div class="content">
+            <form method="POST">
+                <label for="question">Question:</label>
+                <textarea id="question" name="question" class="question" placeholder="Enter your question here" required></textarea>                
+                
+                <label for="options" id="optionslabel"></label>
+                <ol id="optionsList">
+                    <!-- Options will be dynamically added here using JavaScript -->
+                </ol>
+                
+                <label for="correctAnswer">Correct Answer:</label>
+                <input type="text" id="correctAnswer" name="correctAnswer" placeholder="Enter correct answer" required>
+                <div class="vector">
+                    <button type="button" onclick="addOptions()">Add Option</button>
+                    <button id="submit">Submit Query</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container_2">
+        <button id="addquestion">Add Question</button>
+        <button id="studentscorebutton">Student Scores</button>
+    </div>
+    <div class="container_3" style="display: none;"></div>
+    <div id="back" style="display: none;">
+        <button type="button" id="backbutton">Back</button>
+    </div>
+    <script src="{{ url_for('static', filename='Scripts/Teacher_Dashboard.js') }}"></script>    
+</body>
+</html>

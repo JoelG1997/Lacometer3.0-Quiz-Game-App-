@@ -1,0 +1,1238 @@
+/* visit fonts.google.com for text fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'inter', sans-serif;
+}
+body
+{
+    background-color: #0f172a;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+#container
+{   
+    position: absolute;
+    border-radius: 30px;
+    width: 400px;
+    max-height: 630px;
+    border: 1px solid #ffffff20;
+    overflow: hidden;
+    background-color: #1e293b;
+    color: #d7dade;
+
+}
+
+ol
+{
+    padding: 10px 15px 10px 40px;
+}
+li
+{
+    font-size: 14px;
+    margin: 5px 0;
+}
+.header 
+{
+    background-color: #1e293b;
+    height: 90px;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    color: #f9d126;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #1b2135ff;
+    border-bottom: 1px solid #ffffff20;
+}
+#start-quiz-wrapper
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button
+{
+    background-color: #f9d126;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin: 10px 0 20px 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    color: #1e293b;
+    padding: 15px 20px;
+}
+button:hover
+{
+    background-color: #e9be0e;
+}
+.win-lose-button {
+    position: absolute;
+    top: 55%;
+    left: 43%;
+    width: 14%;
+    transform: translate(-50%, -50%);
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: orangered; 
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.win-lose-button:hover {
+    opacity: 1.5;
+    background-color: limegreen;
+
+}
+
+/* Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.win-lose-button {
+    animation: pulse 1s infinite;
+}
+
+#viewresult
+{
+    position: absolute;
+    top: 70%;
+    left: 44%; /* Adjusted to 50% */
+    width: 12%;
+    transform: translate(-50%, -50%);
+    background-color: greenyellow;
+    color: #0f172a;
+   
+}    
+#viewresult:hover
+{
+  background-color: chartreuse;
+  
+}
+#viewresultforfooter
+{
+    position: relative;
+   
+    left: 71%; 
+    background-color: lightgreen;
+    color: #0f172a;
+}    
+#viewresultforfooter:hover
+{
+  background-color:goldenrod;
+  
+}
+.content
+{
+    padding: 10px 30px;
+    max-height: 400px;
+    overflow: auto;
+}
+.question
+{
+    color: #ccdae7;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 5px 3px;
+}
+
+.option,.result-option
+{
+    min-height: 40px;
+    border-radius: 10px;
+    background-color: #0f172a;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #ccdae7;
+    margin: 8px 0;
+    font-weight: 500;
+    position: relative;
+}
+.option span,.result-option span
+{   
+    position: absolute;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    background-color: #e9be0e;
+    color: #1e293b;
+    padding: 5px;
+}
+
+
+.option:hover
+{
+    background-color: #e9be0e;
+    color: #1e293b;
+}
+
+.footer
+{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 0;
+}
+.correct
+{
+    background-color: #1bd027;
+    color: #1e293b !important;
+}
+.correct span
+{
+    background-color: #1e293b;
+    color: #1bd027;
+}
+
+.wrong
+{
+    background-color: #e73030;
+    color: #1e293b;
+}
+
+.wrong span
+{
+    background: #1e293b;
+    color: #e73030;
+}
+
+#timer
+{   
+    padding: 15px 5px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    font-size: 35px;
+    margin: 10px 0 20px 0;
+    color: #e9be0e;
+    font-weight: bold;
+}
+.time-over
+{
+    color: #e73030 !important;
+}
+
+
+/* result page */
+
+#trophy
+{
+    font-size: 100px;
+    text-align: center;
+    margin: 40px 0;
+}
+#score
+{
+    text-align: center;
+    font-size: 14px;
+}
+#score b
+{
+    color: #e9be0e;
+    font-size: 25px;
+}
+.result-score
+{
+    margin-top: 5px;
+}
+#result-footer
+{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+#result-footer button
+{
+    margin: 0 10px;
+}
+
+#detailed-result
+{
+    background: transparent;
+    color: #e9be0e;
+    border: 1px solid #e9be0e;
+}
+#detailed-result:hover
+{
+    background: #e9be0e;
+    color: #0f172a;
+}
+.Main 
+{
+ /* Optionally, you can set width or other styles for the container */
+     width: 100px;
+}
+
+
+
+
+/* Dice--------------------------------------------------------------- */
+.dice 
+{
+    color: #d7dade;
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+}
+
+  @keyframes roll 
+  {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    25% { transform: rotateX(360deg) rotateY(0deg); }
+    50% { transform: rotateX(360deg) rotateY(360deg); }
+    75% { transform: rotateX(0deg) rotateY(360deg); }
+    100% { transform: rotateX(0deg) rotateY(0deg); }
+  }
+  
+  .animate 
+  {
+    animation: roll 0.5s ease-in-out; 
+  }
+  
+  
+/* --------------------------------------------------- */
+
+#nextBtn
+{
+    position: relative;
+    left: 75%;
+}
+
+
+
+
+
+/* Snake and Ladder------------------------------------------ */
+.snakeandladder 
+{
+    position: absolute;
+    top: 110px;
+    right: 30px; /* Adjust this value as needed */
+}
+
+    
+    #board 
+    {
+        display: grid;
+        grid-template-columns: repeat(10, 70px);
+        grid-template-rows: repeat(5, 70px);
+        border: 2px solid  goldenrod;
+        margin: 20px auto;
+    }
+    .square 
+    {   color: whitesmoke;
+        border: 1px solid burlywood;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .blink 
+    {
+        animation: blink-animation 1s infinite;
+      }
+      
+      @keyframes blink-animation 
+      {
+        0% {
+          background-color: transparent;
+        }
+        50% {
+          background-color: yellow; /* Change to the desired color */
+        }
+        100% {
+          background-color: transparent;
+        }
+      }
+      
+
+
+  
+    .warn 
+    {   
+        color: lightskyblue; /* Red */
+        font-size: 15px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+        position:absolute;
+        transform: translate(-50%, -50%);
+        top: 110%;
+        left: 59%;
+        white-space: nowrap;
+    }
+    
+    .warnsecond 
+    {   
+        color: lightskyblue; /* Red */
+        font-size: 15px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+        position:absolute;
+        transform: translate(-50%, -50%);
+        top: 110%;
+        left: 59%;
+        white-space: nowrap;
+    }
+    
+    .Scoredisplay_1
+    {
+        color: brown; 
+        filter: brightness(140%);
+        font-size: 24px;
+        font-weight: 900;
+        text-align: center;
+        opacity: 1;
+        animation: popUp 0.5s ease-out forwards;
+        position:absolute;
+        transform: translate(-50%, -50%);
+        top: 52%;
+        left: -140%;
+        
+    }
+    .Scoredisplay_2
+    {
+        color: darkgreen; 
+        filter: brightness(140%);
+        font-size: 24px;
+        font-weight: 900;
+        text-align: center;
+        opacity: 1;
+        animation: popUp 0.5s ease-out forwards;
+        position:absolute;
+        transform: translate(-50%, -50%);
+        top: 52%;
+        left: -140%;
+    }
+
+    @keyframes blinkBackground 
+    {
+        0% { background-color: grey; }
+        50% { background-color: teal; }
+        100% { background-color: grey; }
+      }
+.dicebutton
+{   top:-340px;
+    right: -20px;
+    margin: 350px;
+    position: absolute;
+}
+
+      .result-option {
+        position: relative;
+    }
+    
+    .you-text {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .logout 
+    {
+        position: absolute;
+        top: 10px; /* Adjust as needed */
+        right: 10px; /* Adjust as needed */
+        z-index: 9999; /* Ensures it appears above other elements */
+    }
+    .lose-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+        display: none; /* Initially hidden */
+        z-index: 999; /* Ensure it appears on top of other elements */
+    }
+    
+    .win-lose-overlay 
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+        display: none; /* Initially hidden */
+        z-index: 999; /* Ensure it appears on top of other elements */
+    }
+    
+    .win-lose-message 
+    {   
+        position: absolute;
+        width: 17%;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+        color: red;
+        font-size: larger;
+        font-weight: bolder;
+        padding: 20px;
+        border-radius: 10px;
+        display: none; /* Initially hidden */
+        z-index: 1000; /* Ensure it appears on top of the overlay */
+    }
+#bluetimer
+{   position:absolute;
+    transform: translate(-50%, -50%);
+    top: 79.4%;
+    left: 32.4%;
+    width: 80px;
+    animation: pop 1.4s infinite alternate ease-in-out; /* Adjust the timing */
+ 
+}
+#yellowtimer
+{
+    position:absolute;
+    transform: translate(-50%, -50%);
+    top: 79.4%;
+    left: 32.4%;
+    width: 80px;
+    animation: pop 1.2s infinite alternate ease-in-out; /* Adjust the timing */
+}    
+#redtimer
+{
+    position:absolute;
+    transform: translate(-50%, -50%);
+    top: 79.4%;
+    left: 32.4%;
+    width: 80px;
+    animation: pop 1s infinite alternate ease-in-out; /* Adjust the timing */
+   
+}    
+@keyframes pop 
+{
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+#container_3 {
+    position: absolute;
+    margin-left: 40%;
+    width: 500px;
+    max-height: 630px;
+    border: 1px solid #ffffff20;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: transparent;
+    color: #d7dade;
+}
+
+/* Additional styles for the buttons */
+input[type="radio"] 
+{
+    display: none; /* Hide the radio buttons */
+}
+
+label {
+    cursor: pointer;
+    width: 10px; /* Adjust button width */
+    height: 10px; /* Adjust button height */
+    background-color: lightgoldenrodyellow; /* Button background color */
+    border-radius: 50%; /* Make the button round */
+    display: inline-block;
+    margin-right: 10px; /* Adjust spacing between buttons */
+    transition: background-color 0.2s ease; /* Smooth transition */
+}
+
+/* Styling for checked state */
+input[type="radio"]:checked + label 
+{
+    background-color: darkorange; /* Change background color when checked */
+}
+
+ul.content-list {
+    list-style-type: none;
+    padding: 10px 15px 10px 6px;
+    margin: -9px;
+    position: relative; 
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+    opacity: 1; /* Initial opacity */
+}
+
+ul.content-list.hide {
+    opacity: 0; /* Hide the element */
+}
+
+ul.content-list.show {
+    opacity: 1; /* Show the element */
+}
+
+ul {
+    list-style-type: none;
+    padding: 10px 15px 10px 6px;
+    margin: -9px;
+    position: relative; 
+}
+
+#sign {
+    width: 50px; /* Adjust based on your image size */
+    height: 50px; /* Adjust based on your image size */
+    position: relative; 
+}
+
+.signimage {
+    width: 10%;
+    height: 10%; 
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.Sign-Content {
+    padding: 10px 30px;
+    overflow: auto;
+}
+
+.Sign-Header {
+    height: 76px;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    color: darkorange;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #1b2135ff;
+}
+
+ul li span {
+    position: relative;
+    bottom: 16px;
+    color: lightgrey; 
+    font-size: 13.5px; 
+    margin-left: 30px; 
+    white-space: nowrap;
+    font-weight: bolder;
+}
+
+
+/* Leaderboard Table-------------*/
+.container_4 
+{
+    position: absolute;
+    top: 44%;
+    left: 46%;
+    border-radius: 15px;
+    width: 53%;
+    max-height: 630px;
+    border: 1px solid #ffffff20;
+    overflow: hidden;
+    background-color: #1e293b;
+    color: #d7dade;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+#leaderboard {
+    margin-top: 20px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+#leaderboard h2 {
+    color: #f9d126;
+    text-align: center;
+    margin-top: -33px;
+    padding-top: 10px;
+}
+
+#leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 4%;
+}
+
+#leaderboard-table th,
+#leaderboard-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ffffff20;
+}
+
+#leaderboard-table th 
+{
+    background-color: #1e293b;
+    color: #f9d126;
+    font-weight: bold;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255, 255, 204, 0.8); }
+    50% { box-shadow: 0 0 10px rgba(255, 255, 204, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(255, 255, 204, 0.8); }
+}
+
+.highlighted {
+    animation: glow 1.5s infinite;
+    font-weight: bold;
+    color: beige;
+    background-color: transparent; 
+}
+
+
+#leaderboardbutton
+{
+    position: absolute;
+    top: 70%;
+    left: 57%; 
+    width: 12%;
+    transform: translate(-50%, -50%);
+    background-color:deepskyblue;
+    color: #0f172a;
+    
+}    
+#leaderboardbutton:hover
+{
+  background-color: dodgerblue; 
+}
+
+
+#viewresultonleaderboard
+{
+    position: absolute;
+    left: 1%;
+    top: 1%;
+    background-color: greenyellow;
+    color: #0f172a;
+   
+}    
+#viewresultonleaderboard:hover
+{
+  background-color: chartreuse;
+}
+
+
+#leaderboardonviewresult
+{
+    position: absolute;
+    top: 1.5%;
+    left: 1%; 
+    background-color:deepskyblue;
+    color: #0f172a;
+    
+}    
+#leaderboardonviewresult:hover
+{
+  background-color: dodgerblue; 
+}
+
+
+
+/* Trophy Box  for team 1 CSS for Team */
+
+.container_5 
+{
+    position: absolute;
+    border-radius: 34px;
+    top:5%;
+    right: 55%;
+    width: 25%;
+    height: 28%;
+    border: 1px solid gray;
+    overflow: hidden;
+    background-color: #1e293b;
+    color: #d7dade;
+}
+
+.trophy-box 
+{
+    width: 100%;
+    text-align: center;
+    padding: 36px 0;
+    position: absolute;
+    top: -10%;
+    overflow: hidden; 
+}
+
+.trophy-box::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    border-radius: 30px;
+} 
+
+.team-name 
+{
+    font-family: 'FontAwesome';
+    font-size: 51px;
+    font-weight: bolder;
+    
+}
+
+.trophy_1 
+{
+    position: relative;
+    right: 10%;
+    font-size: 48px;
+}
+
+.blink 
+{
+    color: greenyellow;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+
+ #both_team_total_points
+ {
+    position: absolute;
+    right: 16%;
+    top: -3%;
+    color: darkorange;
+ } 
+ /* Trophy Box 2 for Team 2 CSS for Team */
+
+.container_6 
+{
+    position: absolute;
+    border-radius: 34px;
+    top:5%;
+    left: 55%;
+    width: 25%;
+    height: 28%;
+    border: 1px solid gray;
+    overflow: hidden;
+    background-color: #1e293b;
+    color: #d7dade;
+}
+
+.trophy-box 
+{
+    width: 100%;
+    text-align: center;
+    padding: 36px 0;
+    position: absolute;
+    top: -10%;
+    overflow: hidden; 
+}
+
+.trophy-box::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    border-radius: 30px;
+} 
+
+.team-name 
+{
+    font-family: 'FontAwesome';
+    font-size: 51px;
+    font-weight: bolder;
+    
+}
+
+.trophy_2 
+{
+    position: relative;
+    right: 10%;
+    font-size: 48px;
+}
+
+.blink {
+    color: greenyellow;
+    animation: blink 1s infinite;
+  }
+
+@keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  
+
+/* Individual Player Box-------------*/
+.container_7 {
+    position: absolute;
+    top: 44%;
+    left: 8%;
+  
+}
+
+.info-box {
+    background-color: #1e293b;
+    color: #d7dade;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: borderColors 9s infinite; /* Animation to change border colors */
+    border: 2px solid transparent; /* Initial border style */
+}
+
+@keyframes borderColors {
+    0% {
+        border-color: #f9d126; /* Start with yellow border */
+    }
+    25% {
+        border-color: transparent; /* Change to transparent */
+    }
+    75% {
+        border-color: transparent; /* Change to transparent */
+    }
+    100% {
+        border-color: #f9d126; /* Back to yellow border */
+    }
+}
+
+
+.info-box h2 {
+    color: #f9d126;
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-transform:capitalize;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    column-gap: 5%;
+}
+
+.stat-box-green 
+{
+    background-color: #394f67;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    animation: borderColorsgreen 9s infinite; /* Animation to change border colors */
+    border: 2px solid transparent; /* Initial border style */
+}
+
+@keyframes borderColorsgreen 
+{
+   
+    0%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    10% 
+    {
+        border-color: rgb(173, 240, 173); /* Change to red border */
+    }
+    20%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    30%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    40%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    50%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    60% 
+    {
+        border-color: rgb(173, 240, 173); /* Change to red border */
+    }
+    70%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    80%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    90%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    100%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    
+}
+.stat-box-red
+{
+    background-color: #394f67;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    animation: borderColorsred 9s infinite; /* Animation to change border colors */
+    border: 2px solid transparent; /* Initial border style */
+}
+
+@keyframes borderColorsred 
+{
+    0%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    10%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    20% {
+        border-color: rgb(254, 82, 82); /* Change to red border */
+    }
+    30%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    40%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    50%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    60%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    70% {
+        border-color: rgb(254, 82, 82); /* Change to red border */
+    }
+    80%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    90%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    100%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+   
+}
+.stat-box-blue 
+{
+    background-color: #394f67;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    animation: borderColorsblue 9s infinite; /* Animation to change border colors */
+    border: 2px solid transparent; /* Initial border style */
+}
+
+@keyframes borderColorsblue 
+{
+    0%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    10%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    20%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    30% {
+        border-color: rgb(174, 226, 243); /* Change to red border */
+    }
+    40%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    50%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    60%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    70%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    80% {
+        border-color: rgb(174, 226, 243); /* Change to red border */
+    }
+    90%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    100%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    
+}
+
+
+.comparison 
+{
+    background-color: #394f67;
+    padding: 15px;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    animation: borderColorsblueviolet 9s infinite; /* Animation to change border colors */
+    border: 2px solid transparent; /* Initial border style */
+}
+
+@keyframes borderColorsblueviolet
+{
+    0%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    10%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    20%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    30%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    40% {
+        border-color: blueviolet; /* Change to transparent */
+    }
+    50%
+    {
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    60%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    70%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    80%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+   
+    90% {
+        border-color: blueviolet; /* Change to transparent */
+    }
+    100%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+}
+
+
+
+.comparison p {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.comparison span {
+    color: #d7dade;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+.Teamaverage 
+{   position: absolute;
+    top: 61.5%;
+    left: 52%;
+    width:44%;
+    background-color: #394f67;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    animation: borderColorssalmon 9s infinite; /* Animation to change border colors */
+    border: 2px solid transparent; /* Initial border style */
+}
+
+@keyframes borderColorssalmon 
+{
+
+    0%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    10%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    20%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    30%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    40%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    50% 
+    {
+        border-color: darkkhaki; /* Change to transparent */
+    }
+    60%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    70%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    80%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    90%{
+        border-color:  transparent; /* Change to transparent */ 
+    }
+    100% 
+    {
+        border-color: darkkhaki; /* Change to transparent */
+    }
+
+}
+
+
+
+.Teamaverage p {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.Teamaverage span {
+    color: #d7dade;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.radiobuttons
+{
+  position: absolute;
+  left: 47%;
+}
+
+
+

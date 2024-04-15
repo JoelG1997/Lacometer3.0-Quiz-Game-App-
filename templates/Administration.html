@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/Administration.css') }}">
+</head>
+<body>
+<!-- This div contains the entire administration page content -->
+<div class="Administration_Page">
+    
+    <!-- This div contains the title of the form -->
+    <div class="form-title">
+        
+        <!-- Loop through each user in the users list -->
+        {% for user in users %}
+        
+            <!-- Display the administration approval section for each user -->
+            <h4>Administration Approval</h4>
+            <h5>Email:{{ user.username }}</h5>
+            <h6>Designation:{{ user.Designation }}</h6>
+            
+        {% endfor %}
+        
+    </div>
+
+    <!-- This form allows approving or disapproving users -->
+    <form action="/admin" method="POST">
+        
+        <!-- Loop through each user in the users list -->
+        {% for user in users %}
+        
+            <!-- Hidden input field to store the user's ID -->
+            <input type="hidden" name="user_id" value="{{ user.id }}">
+            
+            <!-- Button to approve the user -->
+            <input type="submit" value="Approve" name="action" class="submit-btn1 approveButton" data-user-id="{{ user.id }}">
+            
+            <!-- Button to disapprove the user -->
+            <input type="submit" value="Disapprove" name="action" class="submit-btn2">
+            
+        {% endfor %}
+        
+    </form>
+    
+</div>
+
+</body>
+</html>
