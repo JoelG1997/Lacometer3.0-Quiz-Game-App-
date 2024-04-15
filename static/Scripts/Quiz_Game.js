@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () 
 {    
     let timer;
-    let timeLeft =120; // Initial time in seconds
+    let timeLeft =60; // Initial time in seconds
     let timeconst = timeLeft;
     let selectedOption = null; 
     let fetchfunctioncount = 0;
