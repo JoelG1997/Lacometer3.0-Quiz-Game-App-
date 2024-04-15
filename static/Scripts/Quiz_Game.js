@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () 
 {    
     let timer;
-    let timeLeft =10; // Initial time in seconds
+    let timeLeft =120; // Initial time in seconds
     let timeconst = timeLeft;
     let selectedOption = null; 
     let fetchfunctioncount = 0;
@@ -587,8 +587,8 @@ document.addEventListener('DOMContentLoaded', function ()
                     const maxLoadLimit = 10;
                     function fetchLeaderboardDetails() 
                     {
-                        if (loadCounter >= maxLoadLimit) {
-                            console.log('Maximum load limit reached. Stopping further polling.');
+                        if (loadCounter >= maxLoadLimit) 
+                        {
                             return;
                         }
                     
@@ -978,7 +978,6 @@ document.addEventListener('DOMContentLoaded', function ()
         
         function dicerolling()
         {
-            // const randomNumber = 28;
             const randomNumber = Math.floor(Math.random() * 6) + 1;
             return randomNumber;
         }
